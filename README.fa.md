@@ -4,9 +4,9 @@
   <br><img src="https://github.com/NiREvil/Emotional-Damage/assets/126243832/66c9bdfb-9e74-4a91-a7d3-9a180450c690" width="320px">
 </p>
 
-[🇮🇷فارسی](README.fa.md)
+[🇮🇷فارسی](README.fa.md)  
 
-[🇬🇧انگلیسی](README.md)
+[🇬🇧English](README.md)
 
 ###### با تشکر فراوان از 3KmFi6HP
 
@@ -36,7 +36,7 @@
 
 ## استقرار در worker.dev
 
-1.  کپی کنید`_worker.js`کد از[اینجا](_worker.js).
+1.  کپی کنید`_worker.js` code from [اینجا](_worker.js).
 
 2.  همچنین، می‌توانید روی دکمه زیر کلیک کنید تا مستقیماً مستقر شود.
 
@@ -44,9 +44,9 @@
 
 ## تنظیمات UUID
 
-1.  هنگام استقرار در صفحات cloudflare، می توانید uuid را در آن تنظیم کنید`wrangler.toml`فایل نام متغیر است`uuid`.`wrangler.toml`فایل نیز پشتیبانی می شود. (توصیه می شود) در صورت استقرار در صفحات وب، نمی توانید uuid را در آن تنظیم کنید`wrangler.toml`فایل
+1.  هنگام استقرار در صفحات cloudflare، می توانید uuid را در آن تنظیم کنید`wrangler.toml`فایل نام متغیر است`uuid`.`wrangler.toml` file is also supported. (recommended) in case deploy in webpages, you can not set uuid in `wrangler.toml`فایل
 
-2.  هنگام استقرار در worker.dev، می توانید uuid را در آن تنظیم کنید**خط یازدهم**از`_worker.js`فایل نام متغیر است`userID`.`wrangler.toml`فایل نیز پشتیبانی می شود. (توصیه می شود) در صورت استقرار در صفحات وب، نمی توانید uuid را در آن تنظیم کنید`wrangler.toml`فایل در این مورد، می توانید uuid را نیز تنظیم کنید`uuid`متغیر محیطی
+2.  هنگام استقرار در worker.dev، می توانید uuid را در آن تنظیم کنید**11th line**از`_worker.js`فایل نام متغیر است`userID`.`wrangler.toml`فایل نیز پشتیبانی می شود. (توصیه می شود) در صورت استقرار در صفحات وب، نمی توانید uuid را در آن تنظیم کنید`wrangler.toml`فایل در این حالت می توانید uuid را نیز تنظیم کنید`uuid`متغیر محیطی
 
 توجه:`UUID`uuid است که می خواهید تنظیم کنید. روش pages.dev و worker.dev همه آنها پشتیبانی می شود، اما به روش استقرار شما بستگی دارد.
 
@@ -109,7 +109,7 @@ let IP13 = 'www.wto.org'
 
 ## پشتیبانی از چند پورت
 
-برای لیستی از پورت های پشتیبانی شده از Cloudflare، لطفاً به ادامه مطلب مراجعه کنید[اسناد رسمی](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/ports).
+برای لیستی از پورت های پشتیبانی شده از Cloudflare، لطفاً به آدرس زیر مراجعه کنید[اسناد رسمی](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/ports).
 
 به طور پیش فرض، پورت 8080 و 8443 است. اگر می خواهید پورت ها را تغییر دهید، می توانید از پورت های زیر استفاده کنید:
 
@@ -141,20 +141,20 @@ let PT13 = '2096'
 
 ## پروکسی IP
 
-1.  هنگام استقرار در صفحات cloudflare، می توانید پروکسی IP را در آن تنظیم کنید`wrangler.toml`فایل یا تنظیم کنید`_worker.js`فایل در**خط 13**.  یا من توصیه کردم متغیر محیطی را با نام تنظیم کنید`proxyip`در حساب صفحه/cloudflare شما.
+1.  هنگام استقرار در صفحات cloudflare، می توانید پروکسی IP را در آن تنظیم کنید`wrangler.toml`فایل یا تنظیم کنید`_worker.js`فایل در**خط 13**.  یا توصیه می کنم متغیر محیطی را با نام تنظیم کنید`proxyip`در حساب صفحه/cloudflare شما.
 
 2.  هنگام استقرار در worker.dev، می توانید پروکسی IP را در آن تنظیم کنید`_worker.js`فایل نام متغیر است`proxyIP`.
-    می توانید پروکسی آی پی را در اینجا پیدا کنید:<https://github.com/NiREvil/vless/blob/main/sub/ProxyIP.md>
+    می توانید پروکسی IP را در اینجا پیدا کنید:<https://github.com/NiREvil/vless/blob/main/sub/ProxyIP.md>
 
 > [!احتیاط]`proxyIP`آی پی یا دامنه ای است که می خواهید تنظیم کنید. این بدان معنی است که پروکسی IP برای هدایت ترافیک از طریق یک پروکسی به جای مستقیم به وب سایتی که از Cloudflare (CDN) استفاده می کند، استفاده می شود. اگر این متغیر را تنظیم نکنید، اتصال به IP Cloudflare لغو (یا مسدود می شود)...
 >
-> دلایل: سوکت های خروجی TCP به محدوده IP Cloudflare به طور موقت مسدود هستند، لطفاً به[اسناد tcp-sockets](https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/#considerations)
+> دلایل: سوکت های خروجی TCP به محدوده IP Cloudflare به طور موقت مسدود شده اند، لطفاً به[اسناد tcp-sockets](https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/#considerations)
 
 ![rainbow](https://github.com/NiREvil/vless/assets/126243832/1aca7f5d-6495-44b7-aced-072bae52f256)
 
 ### استفاده
 
-اول، pages.dev/uuid خود را باز کنید مانند:`https://edtunnel.pages.dev/uuid your set`در مرورگر خود، برای دریافت لینک های فرعی vless/singbox و clash.
+ابتدا، pages.dev/uuid خود را باز کنید مانند:`https://edtunnel.pages.dev/uuid your set`در مرورگر خود، برای دریافت لینک های فرعی vless/singbox و clash.
 
 اعتبارات:[آن را استریل کنید](https://github.com/3Kmfi6HP/EDtunnel)&[zizifn](https://github.com/zizifn/edgetunnel)
 
